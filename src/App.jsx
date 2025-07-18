@@ -6,25 +6,17 @@ import ChatMessage from "./components/ChatMessage";
 
 const App = () => {
   const [chatHistory, setChatHistory] = useState([
-    // {
-    //   hideInChat: true,
-    //   role: "model",
-    //   text: companyInfo,
-    // },
   ]);
   const [showChatbot, setShowChatbot] = useState(false);
   const chatBodyRef = useRef();
 
   const generateBotResponse = async (history) => {
-    // ...existing code...
     const updateHistory = (text, isError = false) => {
       setChatHistory((prev) => [
         ...prev.filter((msg) => msg.text !== "Thinking..."),
         { role: "model", text, isError },
       ]);
-    };
-    // ...existing code...
-    // Format chat history for API request
+    }; 
     history = history.map(({ role, text }) => ({ role, parts: [{ text }] }));
 
     const requestOptions = {
