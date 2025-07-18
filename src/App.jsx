@@ -62,6 +62,7 @@ const App = () => {
   return (
     <div className={`container ${showChatbot ? "show-chatbot" : " "}`}>
       {/* // In App.jsx (or wherever your toggler button is) */}
+       <div className="chatbot-heading" style={{padding: "20px", fontSize: "60px", fontWeight: "bold", color: "#329"}}>CLICK ON RIGHT CORNER ICON TO ACCESS AI CHATBOT</div>
       <button
         onClick={() => setShowChatbot((prev) => !prev)}
         id="chatbot-toggler"
